@@ -86,6 +86,34 @@ public class EmployeePayrollSystem {
     }
 }
 
+// 2. HELPER CLASS (MUST NOT BE PUBLIC)
+class Employee {
+    private String name;
+    private int empId;
+    private double baseSalary;
+    private double allowances;
+    private double deductions;
 
-    
+    // Constructor
+    public Employee(String name, int empId, double baseSalary, double allowances, double deductions) {
+        this.name = name;
+        this.empId = empId;
+        this.baseSalary = baseSalary;
+        this.allowances = allowances;
+        this.deductions = deductions;
+    }
+
+    // Calculation Logic
+    public double getNetSalary() {
+        return (baseSalary + allowances) - deductions;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    // Display Logic
+    public void showData() {
+        System.out.println("ID: " + empId + " | Name: " + name + " | Net: " + getNetSalary());
+    }
 }
